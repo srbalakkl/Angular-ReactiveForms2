@@ -1,0 +1,47 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" >
+
+    <p>
+        <label for="firstname">First Name </label>
+        <input id="firstname" name="firstname" type="text" formControlName="firstName">
+    </p>
+
+    <p>
+        <label for="lastname">Last Name </label>
+        <input id="lastname" name="lastname" type="text" formControlName="lastName">
+    </p>
+
+    <p>
+        <label for="email">Email </label>
+        <input id="email" name="email" type="text" formControlName="email">
+    </p>
+
+    <p>
+<!--        <label>Geneder </label>-->
+<!--        <input  name="gender" type="radio" value="male" formControlName="gender"> Male-->
+<!--        <input  name="gender" type="radio" value="female" formControlName="gender"> Female-->
+
+<!--        another way by using property binding-->
+        <label for="gender" *ngFor="let gender of genders">
+            <input type="radio" id="gender" [value]="gender" formControlName="gender">{{gender}}
+        </label>
+    </p>
+    
+    <p>
+        <label for="isMarried">Married </label>
+        <input id="isMarried" name="isMarried" type="checkbox" formControlName="isMarried">
+    </p>
+
+<!--    <p>-->
+<!--        <label for="country">country </label>-->
+<!--        <select id="country" name="country">-->
+<!--            <option *ngFor="let c of countryList" [ngValue]="c.id">-->
+<!--                {{c.name}}-->
+<!--            </option>-->
+<!--        </select>-->
+<!--    </p>-->
+
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+
+</form>
